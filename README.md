@@ -4,6 +4,9 @@ By referring this app you can learn android appliaction development concepts lik
 
 MVVM
  - Its a architectural pattern, through which your all modules are loosely coupled, so your app is easily testable and maintainable
+ 
+DataBinding(no more findviewById's)
+ - binding(injecting) views into code(One way) and binding data into views(two way)
 
 Dagger Hilt
  - Android based DI framework developed on top of dagger2
