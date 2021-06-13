@@ -25,6 +25,7 @@ By referring this application we can understand most of the modern application c
   Because a coroutine can pause on one thread and restart on same/different
   thread, which makes effiecient usage of threads(CPU). But which cannot be achieved through
   any traditional multithreading frameworks like Executors, RxJava etc
+  Coroutine + flow can easily replace RxJava.
 
 **Retrofit**
 - REST-Client based webservices implementation with Retrofit library.
