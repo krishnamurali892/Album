@@ -32,8 +32,8 @@ By referring this application we can understand most of the modern application c
 
 **Retrofit**
 - REST-Client based webservices implementation with Retrofit library.
-  Its simple use and removes a lot of efforts for making REST based API calls.
-  API calls are aynchromous and it will taken care by library itself.
+- Its simple use and removes a lot of efforts for making REST based API calls.
+- API calls are aynchromous and it will taken care by library itself.
 
 **Glide**
  - Its a image loading library and images are loaded and stored in cache asynchronously.
