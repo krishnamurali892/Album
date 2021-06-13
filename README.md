@@ -47,6 +47,6 @@ By referring this application we can understand most of the modern application c
  - Its a kotlin programming language plugin meant for Serialization/Deserialization of objects.
  - As we know In Android we will use Parcelable Interface instead Java's Serializable interface,
    to write our own custom logic to serialize an object, But it needs a manual work and adds an extra code.
- - This manual work can be automated and code can be generated on behalf us at compile time by Parcelize kotlin plugin.
+ - This manual work can be automated and code can be generated on behalf of us at compile time by Parcelize kotlin plugin.
    
 
