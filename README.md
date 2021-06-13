@@ -9,6 +9,7 @@ By referring this application we can understand most of the modern application c
 **DataBinding**(no more findviewById's)
  - This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
    without having view's reference explicitly(by findViewById's).
+   It will be replaced with Jetpack compose in future.
 
 **Dagger Hilt**(Annotation based)
  - Its a compile time Android based Dependency Injection framework build on top of dagger2 framework,
