@@ -10,7 +10,7 @@ By referring this application code we can understand most of the latest android 
  - This library allows us to bind(inject) views into code(XML -> Kotlin) and binding data into views(XML <- Kotlin),
    without having any view's reference explicitly(findViewById's).
  - DataBinding library is required for binding data(java/kotlin) and UI(xml), As in upcoming days Jetpack component 'Compose'
-   can be used to draw views dynamically in code itself, So in future DataBinding library may deprecate.
+   can be used to draw views dynamically in code itself, So in future DataBinding library may not required.
 
 **Dagger Hilt**(Annotation based)
  - Its a compile time Android based Dependency Injection framework build on top of dagger2 framework.
