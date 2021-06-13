@@ -7,7 +7,8 @@ MVVM
    So that the application can be easily testable and maintainable(Modifiable)
  
 DataBinding(no more findviewById's)
- - binding(injecting) views into code(One way) and binding data into views(two way)
+   This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
+   without having view's reference explicitly(by findViewById's).
 
 Dagger Hilt
  - Android based DI framework developed on top of dagger2
