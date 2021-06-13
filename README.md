@@ -20,34 +20,34 @@ By referring this application code we can understand most of the latest android 
    which removes lots of boiler plate code as compared to Manual DI and Dagger2.
 
 **Kotlin coroutines**
-- For making asynchronous calls AsyncTask's are no more suported and they can be replaced with
+- For making asynchronous calls AsyncTask's are no more supported and they can be replaced with
   kotlin coroutines
-- Coroutines are more power full and add's very less code as compared to all
-  traditional approaches like asynctask, RXJava etc.
-  **Why they are powerfull?**
-- Because a coroutine can pause on one thread and restart on same/different
-  thread by saving current state of execution, which is called as context switching.
-- This feature makes effiecient usage of threads(CPU), which in turn improves system performance. 
+- Coroutines are more powerful and add very less code as compared to all
+  traditional approaches like asynctask, RXJava etc.
+  **Why they are powerful?**
+- Because a coroutine can pause on one thread and restart on the same/different
+  thread by saving the current state of execution, which is called context switching.
+- This feature makes efficient usage of threads(CPU), which in turn improves system performance. 
   But this cannot be achievable through any traditional multithreading frameworks like Executors, RxJava etc.
 - [Coroutine + flow] can easily replace RxJava/RxKotlin
 
 **Retrofit**
-- REST-Client based webservices implementation with Retrofit library.
-- Its simple to use and removes a lots of efforts for making REST based API calls.
-- API calls are aynchromous and it will taken care by library itself.
+- REST-Client based web services implementation with Retrofit library.
+- It's simple to use and removes a lot of effort for making REST based API calls.
+- API calls are asynchronous and it will be taken care of by the library itself.
 
 **Glide**
- - Its a image loading library and images are loaded and stored in cache asynchronously.
- - As compared to other available libraries(Picasso) it can also support playig GIF files too.
+- It's an image loading library and images are loaded and stored in cache asynchronously.
+- As compared to other available libraries(Picasso) it can also support playing GIF files too.
 
 **RecyclerView**
  - RecyclerView with filter option
  - Implemented action bar search view for filtering recyclerview contents
 
 **Parcelize**(Annotation based)
- - Its a kotlin programming language plugin, meant for Serialization/Deserialization of objects.
- - As we know In Android we will use Parcelable Interface instead Java's Serializable interface,
-   to write our own custom logic to serialize an object, But it needs a manual work and adds an extra code.
- - This manual work can be automated and code can be generated on behalf of us at compile time by Parcelize kotlin plugin.
+ - It's a kotlin programming language plugin, meant for Serialization/Deserialization of objects.
+ - As we know In Android we will use Parcelable Interface instead Java's Serializable interface,
+   to write our own custom logic to serialize an object, But it needs manual work and adds an extra code.
+ - This manual work can be automated and code can be generated on behalf of us at compile time by the Parcelize kotlin plugin.
    
 
