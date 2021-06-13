@@ -20,12 +20,15 @@ By referring this application we can understand most of the modern application c
 
 **Kotlin coroutines**
 - For making asynchronous calls AsyncTask's are no more suported and they can be replaced with
-  kotlin coroutines, which are more power full and add's very less code as compared to all
+  kotlin coroutines
+- Coroutines are more power full and add's very less code as compared to all
   traditional approaches like asynctask, RXJava etc.
-  **They are powerfull?**
-  Because a coroutine can pause on one thread and restart on same/different
-  thread, which makes effiecient usage of threads(CPU). But which cannot be achieved through
+  **Why they are powerfull?**
+- Because a coroutine can pause on one thread and restart on same/different
+  thread by saving current state which is called as context switching.
+- This feature makes effiecient usage of threads(CPU), which in turn improves system performance. But which cannot be achieved through
   any traditional multithreading frameworks like Executors, RxJava etc.
+  
   Coroutine + flow can easily replace RxJava.
 
 **Retrofit**
