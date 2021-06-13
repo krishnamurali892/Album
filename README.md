@@ -32,7 +32,8 @@ By referring this application we can understand most of the modern application c
   API calls are aynchromous and it will taken care by library itself.
 
 **Glide**
- - loading images asynchronously by using Glide library
+ - Its a image loading library and images are loaded and stored in cache asynchronously.
+   As compared other available libraries(Picasso) it can support playig GIF files too) 
 
 **RecyclerView**
  - RecyclerView with filter option
