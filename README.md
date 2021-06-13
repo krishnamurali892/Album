@@ -18,7 +18,9 @@ By referring this application we can understand most of the modern application c
    Manual DI.
 
 **Kotlin coroutines**
-- Making asynchronous calls with Kotlin Coroutines
+- For making asynchronous calls AsyncTask's are no more suported and they can be replaced with
+  kotlin coroutines, which are more power full and add's very less code as compared to all
+  traditional approaches like asynctask, RXJava etc.
 
 **Retrofit**
 - REST-Client based webservices implementation with Retrofit library.
