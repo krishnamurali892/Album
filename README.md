@@ -1,6 +1,6 @@
-This is a simple android appliaction which is developed on MVVM Architectural design pattern by using Kotlin programming language.
+This is a demo android appliaction which is developed on MVVM Architectural design pattern by using Kotlin programming language.
 
-By referring this application we can understand most of the modern application concepts like
+By referring this application code we can understand most of the latest android application development concepts like
 
 **MVVM**
  - Its a architectural design pattern, where presentation, business and data layers are loosely coupled
