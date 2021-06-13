@@ -6,7 +6,7 @@ By referring this application we can understand most of the modern application c
  - Its a architectural design pattern, where presentation, business and data layers are loosely coupled
    So that the application can be easily testable and maintainable(Modifiable)
  
-**DataBinding**(no more findviewById's)
+**DataBinding**(no more findViewById's)
  - This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
    without having view's reference explicitly(by findViewById's).
  - Even DataBinding will also replaced with Jetpack compose in future.(As no more XML for creating UI)
