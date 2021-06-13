@@ -26,7 +26,7 @@ By referring this application code we can understand most of the latest android 
   traditional approaches like asynctask, RXJava etc.
   **Why they are powerfull?**
 - Because a coroutine can pause on one thread and restart on same/different
-  thread by saving current state which is called as context switching.
+  thread by saving current state of execution, which is called as context switching.
 - This feature makes effiecient usage of threads(CPU), which in turn improves system performance. 
   But which cannot be achieved through any traditional multithreading frameworks like Executors, RxJava etc.
 - [Coroutine + flow] can easily replace RxJava/RxKotlin
