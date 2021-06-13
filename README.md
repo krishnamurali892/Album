@@ -3,7 +3,7 @@ This is a demo android appliaction which is developed on MVVM Architectural desi
 By referring this application code we can understand most of the latest android application development concepts like
 
 **MVVM**
- - It is a architectural design pattern, where presentation, business and data layers are loosely coupled.
+ - It is an architectural design pattern, where presentation, business and data layers are loosely coupled.
    So that the application can be easily testable and maintainable(Modifiable)
  
 **DataBinding**(no more findViewById's)
