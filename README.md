@@ -13,7 +13,7 @@ By referring this application code we can understand most of the latest android 
    can be used to draw views dynamically in code itself, So in future DataBinding library may not be required.
 
 **Dagger Hilt**(Annotation based)
- - Its a compile time Android based Dependency Injection framework build on top of dagger2 framework.
+ - It's a compile time Android based Dependency Injection framework built on top of dagger2 framework.
  - If we want to make our code loosely coupled then we need to go with Manual Dependency Injection,
    but it adds a lot of extra code and time to develop. 
  - This Manual work can be automated with the help of DI frameworks and here Hilt is one among them, 
