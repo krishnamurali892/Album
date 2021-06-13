@@ -45,7 +45,7 @@ By referring this application code we can understand most of the latest android 
  - Implemented action bar search view for filtering recyclerview contents
 
 **Parcelize**(Annotation based)
- - Its a kotlin programming language plugin meant for Serialization/Deserialization of objects.
+ - Its a kotlin programming language plugin, meant for Serialization/Deserialization of objects.
  - As we know In Android we will use Parcelable Interface instead Java's Serializable interface,
    to write our own custom logic to serialize an object, But it needs a manual work and adds an extra code.
  - This manual work can be automated and code can be generated on behalf of us at compile time by Parcelize kotlin plugin.
