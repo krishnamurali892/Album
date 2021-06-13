@@ -10,8 +10,11 @@ DataBinding(no more findviewById's)
  - This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
    without having view's reference explicitly(by findViewById's).
 
-Dagger Hilt
- - Android based DI framework developed on top of dagger2
+Dagger Hilt(Annotation based)
+ - Its a compile time Android based Dependency Injection framework build on top of dagger2 framework,
+   If we want to make our code loosely coupled then we need to go with Manual Dependency Injection,
+   but it adds a lot of extra code and time to develop. This Manual work can be automated with the help
+   of DI frameworks and Hilt is one among them.
 
 Kotlin coroutines
 - Making asynchronous calls with Kotlin Coroutines
