@@ -7,7 +7,7 @@ MVVM
    So that the application can be easily testable and maintainable(Modifiable)
  
 DataBinding(no more findviewById's)
-   This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
+ - This library allows us to bind(injecting) views into code(one way) and binding data into views(two way),
    without having view's reference explicitly(by findViewById's).
 
 Dagger Hilt
