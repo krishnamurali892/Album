@@ -28,7 +28,7 @@ By referring this application code we can understand most of the latest android 
 - Because a coroutine can pause on one thread and restart on same/different
   thread by saving current state of execution, which is called as context switching.
 - This feature makes effiecient usage of threads(CPU), which in turn improves system performance. 
-  But which cannot be achieved through any traditional multithreading frameworks like Executors, RxJava etc.
+  But this cannot be achievable through any traditional multithreading frameworks like Executors, RxJava etc.
 - [Coroutine + flow] can easily replace RxJava/RxKotlin
 
 **Retrofit**
