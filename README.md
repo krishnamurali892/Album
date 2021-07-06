@@ -5,6 +5,8 @@ By referring this application code we can understand most of the latest android 
 **MVVM**
  - It is an architectural design pattern, where presentation, business and data layers are loosely coupled.
    So that the application can be easily testable and maintainable(Modifiable)
+   
+   mvvm.png![mvvm](https://user-images.githubusercontent.com/6782604/124628653-50661b00-de9e-11eb-906e-218d09dfd82b.png)
  
 **DataBinding**(no more findViewById's)
  - This library allows us to bind(inject) views into code(XML -> Kotlin) and binding data into views(XML <- Kotlin),
