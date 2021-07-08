@@ -12,8 +12,8 @@ class AlbumListViewModel @Inject constructor(private val albumRepository: AlbumR
     BaseViewModel() {
 
     fun getAlbums() {
-        liveData.value = ServerResponse(ServerResponse.Status.LOADING, null, null)
         job = viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+            liveData.postValue(ServerResponse(ServerResponse.Status.LOADING, null, null))
             liveData.postValue(albumRepository.getAlbums())
         }
     }

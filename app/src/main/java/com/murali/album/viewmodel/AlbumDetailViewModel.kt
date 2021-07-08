@@ -13,8 +13,8 @@ class AlbumDetailViewModel @Inject constructor(private val albumRepository: Albu
     BaseViewModel(){
 
     fun getAlbumDetails() {
-        liveData.value = ServerResponse(ServerResponse.Status.LOADING, null, null)
         job = viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+            liveData.postValue(ServerResponse(ServerResponse.Status.LOADING, null, null))
             liveData.postValue(albumRepository.getAlbumDetails())
         }
     }
