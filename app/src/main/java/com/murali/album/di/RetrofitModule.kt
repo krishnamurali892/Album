@@ -20,10 +20,10 @@ class RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit =
+    fun provideRetrofit(baseUrl: String): Retrofit =
         Retrofit.Builder().apply {
             addConverterFactory(GsonConverterFactory.create())
-            baseUrl(provideBaseUrl())
+            baseUrl(baseUrl)
         }.build()
 
     @Singleton
