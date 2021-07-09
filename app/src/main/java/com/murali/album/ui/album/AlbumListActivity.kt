@@ -66,12 +66,14 @@ class AlbumListActivity : AppCompatActivity() {
                     is Resource.Loading -> showProgressBar(true)
                     is Resource.Success -> {
                         showProgressBar(false)
+                        //Smart casting of Resource to Success type
                         resource.body?.let { albums ->
                             showAlbums(albums)
                         }
                     }
                     is Resource.Failure -> {
                         showProgressBar(false)
+                        //Smart casting of Resource to Failer type
                         showToast(resource.exceptionMessage)
                     }
                 }
