@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.murali.album.R
 import com.murali.album.databinding.ActivityAlbumDetailBinding
-import com.murali.album.model.Album
-import com.murali.album.model.AlbumDetail
-import com.murali.album.utils.ServerResponse
+import com.murali.album.model.entities.Album
+import com.murali.album.model.entities.AlbumDetail
+import com.murali.album.utils.Resource
 import com.murali.album.utils.isInternetAvailable
 import com.murali.album.utils.loadImage
 import com.murali.album.utils.showToast
@@ -40,24 +40,19 @@ class AlbumDetailActivity : AppCompatActivity() {
     }
 
     private fun setObserver() {
-        albumDetailViewModel.liveData.observe(this, Observer {
+        albumDetailViewModel.livedata.observe(this, Observer {
             it?.let { resource ->
-                when (resource.status) {
-                    ServerResponse.Status.SUCCESS -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        resource.data?.let { albums ->
-                            showDetails(albums as List<AlbumDetail>)
+                when (resource) {
+                    is Resource.Loading -> showProgressBar(true)
+                    is Resource.Success -> {
+                        showProgressBar(false)
+                        resource.body?.let { albums ->
+                            showDetails(albums)
                         }
                     }
-                    ServerResponse.Status.ERROR -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        showToast(it.message)
-                    }
-                    ServerResponse.Status.LOADING -> {
-                        progressBar.visibility = View.VISIBLE
-                        recyclerView.visibility = View.GONE
+                    is Resource.Failure -> {
+                        showProgressBar(false)
+                        showToast(resource.exceptionMessage)
                     }
                 }
             }
@@ -66,6 +61,16 @@ class AlbumDetailActivity : AppCompatActivity() {
             albumDetailViewModel.getAlbumDetails()
         } else {
             showToast(resources.getString(R.string.no_internet))
+        }
+    }
+
+    private fun showProgressBar(isShow: Boolean){
+        if(isShow) {
+            progressBar.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+        }else{
+            recyclerView.visibility = View.VISIBLE
+            progressBar.visibility = View.GONE
         }
     }
 

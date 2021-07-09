@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.murali.album.R
 import com.murali.album.databinding.ActivityAlbumListBinding
-import com.murali.album.model.Album
+import com.murali.album.model.entities.Album
 import com.murali.album.utils.showToast
 import com.murali.album.ui.albumdetails.AlbumDetailActivity
-import com.murali.album.utils.ServerResponse
+import com.murali.album.utils.Resource
 import com.murali.album.utils.isInternetAvailable
 import com.murali.album.viewmodel.AlbumListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,36 +60,40 @@ class AlbumListActivity : AppCompatActivity() {
     }
 
     private fun setObserver() {
-        albumListViewModel.liveData.observe(this, Observer {
+        albumListViewModel.livedata.observe(this, Observer {
             it?.let { resource ->
-                when (resource.status) {
-                    ServerResponse.Status.SUCCESS -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        resource.data?.let { albums ->
-                            showAlbums(albums as List<Album>)
+                when (resource) {
+                    is Resource.Loading -> showProgressBar(true)
+                    is Resource.Success -> {
+                        showProgressBar(false)
+                        resource.body?.let { albums ->
+                            showAlbums(albums)
                         }
                     }
-                    ServerResponse.Status.ERROR -> {
-                        recyclerView.visibility = View.VISIBLE
-                        progressBar.visibility = View.GONE
-                        showToast(it.message)
-                    }
-                    ServerResponse.Status.LOADING -> {
-                        progressBar.visibility = View.VISIBLE
-                        recyclerView.visibility = View.GONE
+                    is Resource.Failure -> {
+                        showProgressBar(false)
+                        showToast(resource.exceptionMessage)
                     }
                 }
             }
         })
-        if (isInternetAvailable()) {
-            albumListViewModel.getAlbums()
-        } else {
+        if (!isInternetAvailable()) {
             showToast(resources.getString(R.string.no_internet))
+        }
+        albumListViewModel.getAlbums()
+    }
+
+    private fun showProgressBar(isShow: Boolean){
+        if(isShow){
+            progressBar.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+        }else{
+            recyclerView.visibility = View.VISIBLE
+            progressBar.visibility = View.GONE
         }
     }
 
-    fun showAlbums(list: List<Album>) {
+    private fun showAlbums(list: List<Album>) {
         recyclerView.apply {
             with(adapter as AlbumListAdapter) {
                 setData(list.toMutableList())

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.murali.album.BR
 import com.murali.album.R
 import com.murali.album.databinding.LayoutAlbumDetailItemBinding
-import com.murali.album.model.AlbumDetail
+import com.murali.album.model.entities.AlbumDetail
 import javax.inject.Inject
 
 class AlbumDetailAdapter @Inject constructor(): RecyclerView.Adapter<AlbumDetailAdapter.ItemViewHolder>() {

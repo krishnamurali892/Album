@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.murali.album.BR
 import com.murali.album.R
 import com.murali.album.databinding.LayoutAlbumItemBinding
-import com.murali.album.model.Album
+import com.murali.album.model.entities.Album
 import javax.inject.Inject
 
 class AlbumListAdapter @Inject constructor(): RecyclerView.Adapter<AlbumListAdapter.ItemViewHolder>(), Filterable {

@@ -1,9 +1,13 @@
-package com.murali.album.model
+package com.murali.album.model.entities
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.IgnoredOnParcel
 
+@Entity(tableName = "table_album")
 @Parcelize
 data class Album(
     @SerializedName("albumId")
@@ -12,4 +16,8 @@ data class Album(
     val title: String,
     @SerializedName("url")
     val url: String
-) : Parcelable
+) : Parcelable{
+    @IgnoredOnParcel
+    @PrimaryKey(autoGenerate = true)
+    var id:Int = 0
+}

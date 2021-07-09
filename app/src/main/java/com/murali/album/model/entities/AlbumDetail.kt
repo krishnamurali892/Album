@@ -1,4 +1,4 @@
-package com.murali.album.model
+package com.murali.album.model.entities
 
 import com.google.gson.annotations.SerializedName
 

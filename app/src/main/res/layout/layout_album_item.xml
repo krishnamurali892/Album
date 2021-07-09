@@ -5,7 +5,7 @@
     <data>
         <variable
             name="AlbumItem"
-            type="com.murali.album.model.Album" />
+            type="com.murali.album.model.entities.Album" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -1,39 +1,63 @@
 package com.murali.album.model
 
-import com.murali.album.utils.ServerResponse
-import kotlinx.coroutines.delay
+import android.content.Context
+import com.murali.album.model.entities.Album
+import com.murali.album.model.entities.AlbumDetail
+import com.murali.album.model.localdata.AlbumDao
+import com.murali.album.model.remotedata.AlbumApi
+import com.murali.album.utils.Resource
+import com.murali.album.utils.isInternetAvailable
 
-class AlbumRepository(private val albumApi: AlbumApi){
+class AlbumRepository(private val context: Context, private val albumApi: AlbumApi,
+                      private val albumDao: AlbumDao){
 
-    suspend fun getAlbums(): ServerResponse{
+    suspend fun getAlbums(): Resource<List<Album>?>{
+        if(context.isInternetAvailable()){
+            getRemoteData()
+        }
+        return getLocalData()
+    }
+
+    private suspend fun getRemoteData(): Resource<List<Album>?>{
         try {
-            //Introduced unblocking delay for testing
-            delay(20000)
             val response = albumApi.getAlbums()
             if(response.isSuccessful){
                 val body = response.body()
                 if(body!=null){
-                    return ServerResponse(ServerResponse.Status.SUCCESS, null, response.body())
+                    albumDao.insertAlbums(response.body())
+                    return Resource.Success(response.body())
                 }
             }
-            return ServerResponse(ServerResponse.Status.ERROR, "Error occurred ${response.code()} ${response.message()}", null)
+            return Resource.Failure("Error occurred ${response.code()} ${response.message()}")
         }catch (e: Exception){
-           return ServerResponse(ServerResponse.Status.ERROR, "Error occurred ${e.message ?: e.toString()}", null)
+            return Resource.Failure("Error occurred ${e.message ?: e.toString()}")
         }
     }
 
-    suspend fun getAlbumDetails(): ServerResponse{
+    private suspend fun getLocalData(): Resource<List<Album>?>{
+        try {
+            val albums = albumDao.getAlbums()
+            albums?.let {
+                return Resource.Success(albums)
+            }
+            return Resource.Failure("Error no offline data")
+        } catch (e: Exception) {
+            return Resource.Failure(e.message ?: e.toString())
+        }
+    }
+
+    suspend fun getAlbumDetails(): Resource<List<AlbumDetail>?> {
         try {
             val response = albumApi.getAlbumDetails()
             if(response.isSuccessful){
                 val body = response.body()
                 if(body != null){
-                    return ServerResponse(ServerResponse.Status.SUCCESS, null, response.body())
+                    return Resource.Success(response.body())
                 }
             }
-            return ServerResponse(ServerResponse.Status.ERROR, "Error occurred ${response.code()} ${response.message()}", null)
+            return Resource.Failure("Error occurred ${response.code()} ${response.message()}")
         }catch (e: Exception){
-            return ServerResponse(ServerResponse.Status.ERROR, "Error occurred ${e.message ?: e.toString()}", null)
+            return Resource.Failure("Error occurred ${e.message ?: e.toString()}")
         }
     }
 

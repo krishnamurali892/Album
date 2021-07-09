@@ -1,6 +1,6 @@
 package com.murali.album.di
 
-import com.murali.album.model.AlbumApi
+import com.murali.album.model.remotedata.AlbumApi
 import com.murali.album.model.AlbumRepository
 import dagger.Module
 import dagger.Provides
@@ -29,8 +29,4 @@ class RetrofitModule {
     @Singleton
     @Provides
     fun provideAlbumListService(retrofit: Retrofit): AlbumApi = retrofit.create(AlbumApi::class.java)
-
-    @Singleton
-    @Provides
-    fun provideAlbumRepository(albumApi: AlbumApi) = AlbumRepository(albumApi)
 }
