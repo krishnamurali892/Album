@@ -24,6 +24,7 @@ class AlbumRepository(private val context: Context, private val albumApi: AlbumA
             if(response.isSuccessful){
                 val body = response.body()
                 if(body!=null){
+                    albumDao.deleteAlbums()
                     albumDao.insertAlbums(response.body())
                     return Resource.Success(response.body())
                 }

@@ -14,4 +14,7 @@ interface AlbumDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAlbums(list: MutableList<Album>?)
+
+    @Query("DELETE FROM table_album")
+    suspend fun deleteAlbums()
 }
